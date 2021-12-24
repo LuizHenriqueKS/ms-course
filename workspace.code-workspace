@@ -5,6 +5,9 @@
         },
         {
             "path": "hr-worker"
+        },
+        {
+            "path": "hr-payroll"
         }
     ],
     "settings": {
