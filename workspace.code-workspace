@@ -1,0 +1,15 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "hr-worker"
+        }
+    ],
+    "settings": {
+        "java.configuration.updateBuildConfiguration": "interactive",
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": false,
+    }
+}
