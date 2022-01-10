@@ -8,6 +8,9 @@
         },
         {
             "path": "hr-payroll"
+        },
+        {
+            "path": "hr-eureka-server"
         }
     ],
     "settings": {
