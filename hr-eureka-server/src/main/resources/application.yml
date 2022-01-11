@@ -9,3 +9,6 @@ eureka:
     client:
         register-with-eureka: false
         fetch-registry: false
+    instance:
+        leaseRenewalIntervalInSeconds: 10
+        leaseExpirationDurationInSeconds: 10

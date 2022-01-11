@@ -11,6 +11,9 @@
         },
         {
             "path": "hr-eureka-server"
+        },
+        {
+            "path": "hr-api-gateway-zuul"
         }
     ],
     "settings": {
