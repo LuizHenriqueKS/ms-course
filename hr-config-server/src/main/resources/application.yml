@@ -8,8 +8,5 @@ spring:
                     default-label: main
                     uri: https://github.com/LuizHenriqueKS/ms-course-configs
                 
-
-
-
 server:
     port: 8888

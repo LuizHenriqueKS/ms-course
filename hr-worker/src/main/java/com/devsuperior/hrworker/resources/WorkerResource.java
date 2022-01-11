@@ -6,6 +6,7 @@ import com.devsuperior.hrworker.entities.Worker;
 import com.devsuperior.hrworker.exception.BadRequestException;
 import com.devsuperior.hrworker.repositories.WorkerRepository;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +23,17 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class WorkerResource {
 
+    @Value("${test.config}")
+    private String testConfig;
+
     private final Environment env;
     private final WorkerRepository repository;
+
+    @GetMapping("/configs")
+    public ResponseEntity<Void> getConfigs() {
+        log.info("CONFIG = " + testConfig);
+        return ResponseEntity.noContent().build();
+    }
 
     @GetMapping
     public ResponseEntity<List<Worker>> findAll() {
