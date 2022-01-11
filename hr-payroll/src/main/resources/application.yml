@@ -10,3 +10,11 @@ resilience4j:
         configs:
             default:
                 timeout-duration: 10s
+        
+eureka:
+    client:
+        fetchRegistry: true
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+    instance:
+        preferIpAddress: true

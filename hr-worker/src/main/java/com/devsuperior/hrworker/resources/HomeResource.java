@@ -11,4 +11,9 @@ public class HomeResource {
         return "Hello World";
     }
 
+    @GetMapping("/hr-worker")
+    public String wrongPath() {
+        return "Está no caminho errado";
+    }
+
 }
