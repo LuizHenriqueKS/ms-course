@@ -26,3 +26,9 @@ spring:
             path: /h2-console
     jpa:
         defer-datasource-initialization: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
