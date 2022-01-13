@@ -18,6 +18,12 @@ spring:
                     - Path=/hr-payroll/**
                   filters:
                     - RewritePath=/hr-payroll/, /
+                - id: hr-user
+                  uri: lb://hr-user
+                  predicates:
+                    - Path=/hr-user/**
+                  filters:
+                    - RewritePath=/hr-user/, /
 
 server:
     port: 8765
