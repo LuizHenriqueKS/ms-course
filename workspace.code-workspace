@@ -20,6 +20,9 @@
         },
         {
             "path": "hr-user"
+        },
+        {
+            "path": "hr-oauth"
         }
     ],
     "settings": {
