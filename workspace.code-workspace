@@ -17,6 +17,9 @@
         },
         {
             "path": "hr-config-server"
+        },
+        {
+            "path": "hr-user"
         }
     ],
     "settings": {
