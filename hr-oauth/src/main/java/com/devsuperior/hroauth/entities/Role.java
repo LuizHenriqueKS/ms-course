@@ -1,7 +1,5 @@
 package com.devsuperior.hroauth.entities;
 
-import org.springframework.security.core.GrantedAuthority;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
