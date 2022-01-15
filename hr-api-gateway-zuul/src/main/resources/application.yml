@@ -24,6 +24,12 @@ spring:
                     - Path=/hr-user/**
                   filters:
                     - RewritePath=/hr-user/, /
+                - id: hr-oauth
+                  uri: lb://hr-oauth
+                  predicates:
+                    - Path=/hr-oauth/**
+                  filters:
+                    - RewritePath=/hr-oauth/, /
 
 server:
     port: 8765

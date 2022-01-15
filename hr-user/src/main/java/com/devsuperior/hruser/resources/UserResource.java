@@ -1,7 +1,5 @@
 package com.devsuperior.hruser.resources;
 
-import javax.ws.rs.QueryParam;
-
 import com.devsuperior.hruser.entities.User;
 import com.devsuperior.hruser.repositories.UserRepository;
 
