@@ -1,5 +1,6 @@
 package com.devsuperior.hroauth.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,6 +24,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private final JwtTokenStore tokenStore;
     private final AuthenticationManager authenticationManager;
 
+    @Value("${oauth.client.name}")
+    private String clientName;
+
+    @Value("${oauth.client.secret}")
+    private String clientSecret;
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.tokenKeyAccess("permitAll()")
@@ -32,8 +39,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("myappname123")
-                .secret(passwordEncoder.encode("myappsecret123"))
+                .withClient(clientName)
+                .secret(passwordEncoder.encode(clientSecret))
                 .scopes("read", "write")
                 .authorizedGrantTypes("password")
                 .accessTokenValiditySeconds(60 * 60 * 24);

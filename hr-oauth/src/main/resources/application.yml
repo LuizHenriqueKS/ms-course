@@ -13,3 +13,5 @@ eureka:
 spring:
     application:
         name: hr-oauth
+    config:
+        import: "optional:configserver:"

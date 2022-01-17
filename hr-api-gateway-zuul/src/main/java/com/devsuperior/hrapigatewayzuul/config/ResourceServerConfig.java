@@ -17,7 +17,8 @@ public class ResourceServerConfig {
 
     private static final String[] PUBLIC = { "/hr-oauth/oauth/token" };
     private static final String[] OPERATOR = { "/hr-worker/**" };
-    private static final String[] ADMIN = { "/hr-payroll/**", "/hr-user/**" };
+    private static final String[] ADMIN = { "/hr-payroll/**", "/hr-user/**", "/hr-oauth/**", "/actuactor/**",
+            "/hr-worker/actuator/**", "/hr-oauth/actuator/**" };
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {

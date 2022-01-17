@@ -4,6 +4,8 @@ spring:
     main:
         web-application-type: reactive
         allow-bean-definition-overriding: true
+    config:
+        import: "optional:configserver:"
     cloud:
         gateway:
             routes:
