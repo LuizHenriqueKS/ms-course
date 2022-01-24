@@ -11,10 +11,22 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - hr-worker-pg12-data:/var/lib/postgresql/data
+  hr-user-pg12:
+    image: postgres:12-alpine
+    container_name: hr-user-pg12
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234567
+      POSTGRES_DB: db_hr_user
+    ports:
+      - "5434:5432"
+    volumes:
+      - hr-user-pg12-data:/var/lib/postgresql/data
 
 volumes:
-  pg_data: {}
+  hr-worker-pg12-data: {}
+  hr-user-pg12-data: {}
 
 networks:
   default:
