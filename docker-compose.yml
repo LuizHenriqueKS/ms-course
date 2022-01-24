@@ -57,6 +57,14 @@ services:
       - hr-eureka-server
       - hr-worker
     restart: always
+  hr-oauth:
+    image: hr-oauth:latest
+    container_name: hr-oauth
+    depends_on:
+      - hr-config-server
+      - hr-eureka-server
+      - hr-user
+    restart: always
   hr-api-gateway-zuul:
     image: hr-api-gateway-zuul:latest
     container_name: hr-api-gateway-zuul
@@ -66,6 +74,7 @@ services:
       - hr-worker
       - hr-user
       - hr-payroll
+      - hr-oauth
     restart: always
 
 volumes:
