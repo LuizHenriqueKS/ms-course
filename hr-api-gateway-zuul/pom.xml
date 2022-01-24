@@ -15,6 +15,8 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
+        <jib-maven-plugin.version>3.1.4</jib-maven-plugin.version>
+        <docker.image.name>hr-api-gateway-zuul</docker.image.name>
     </properties>
     <dependencies>
         <dependency>
@@ -84,6 +86,29 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib-maven-plugin.version}</version>
+                <configuration>
+                    <from>
+                        <image>adoptopenjdk:11-jre</image>
+                    </from>
+                    <to>
+                        <image>${docker.image.name}</image>
+                        <tags>
+                            <version>${project.version}</version>
+                        </tags>
+                    </to>
+                    <container>
+                        <ports>
+                            <port>8765</port>
+                        </ports>
+                        <mainClass>com.devsuperior.hrapigatewayzuul.HrApiGatewayZuulApplication</mainClass>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                    </container>
                 </configuration>
             </plugin>
         </plugins>

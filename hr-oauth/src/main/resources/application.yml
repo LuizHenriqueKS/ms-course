@@ -15,3 +15,12 @@ spring:
         name: hr-oauth
     config:
         import: "optional:configserver:"
+    cloud:
+        config:
+            uri: http://hr-config-server:8888
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"

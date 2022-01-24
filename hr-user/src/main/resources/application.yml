@@ -18,6 +18,9 @@ spring:
         import: "optional:configserver:"
     profiles:
         active: prod
+    cloud:
+        config:
+            uri: http://hr-config-server:8888
 
 management:
     endpoints:

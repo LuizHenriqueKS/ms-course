@@ -7,6 +7,8 @@ spring:
     config:
         import: "optional:configserver:"
     cloud:
+        config:
+            uri: http://hr-config-server:8888
         gateway:
             routes:
                 - id: hr-worker
@@ -44,3 +46,9 @@ eureka:
             defaultZone: http://hr-eureka-server:8761/eureka/
     instance:
         preferIpAddress: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"

@@ -43,6 +43,8 @@ services:
   hr-api-gateway-zuul:
     image: hr-api-gateway-zuul:latest
     container_name: hr-api-gateway-zuul
+    ports:
+      - "8765:8765"
     depends_on:
       - hr-worker
     restart: always
