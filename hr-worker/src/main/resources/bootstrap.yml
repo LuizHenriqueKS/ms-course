@@ -1,6 +1,1 @@
-spring:
-    application:
-        name: hr-worker
-    cloud:
-        config:
-            uri: http://hr-config-server:8888
+

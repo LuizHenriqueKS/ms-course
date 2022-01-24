@@ -18,7 +18,9 @@ spring:
         name: hr-worker
     jpa:
         defer-datasource-initialization: true
-
+    cloud:
+        config:
+            uri: http://hr-config-server:8888
 management:
     endpoints:
         web:
