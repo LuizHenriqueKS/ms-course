@@ -39,6 +39,7 @@ services:
     depends_on:
       - hr-config-server
       - hr-eureka-server
+      - hr-worker-pg12
     restart: always
   hr-user:
     image: hr-user:latest
@@ -46,6 +47,15 @@ services:
     depends_on:
       - hr-config-server
       - hr-eureka-server
+      - hr-user-pg12
+    restart: always
+  hr-payroll:
+    image: hr-payroll:latest
+    container_name: hr-payroll
+    depends_on:
+      - hr-config-server
+      - hr-eureka-server
+      - hr-worker
     restart: always
   hr-api-gateway-zuul:
     image: hr-api-gateway-zuul:latest
@@ -54,6 +64,8 @@ services:
       - "8765:8765"
     depends_on:
       - hr-worker
+      - hr-user
+      - hr-payroll
     restart: always
 
 volumes:
